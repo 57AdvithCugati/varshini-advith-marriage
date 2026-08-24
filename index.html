@@ -222,6 +222,58 @@
   const WEDDING_DATE = new Date("2026-11-29T08:05:00+05:30");
   const WEDDING_DATE_LABEL = "29 · November · 2026";
   const MUSIC_SRC = "music/wedding-music.mp3";
+  const CALENDAR_TITLE = "Varshini - Advith Marriage";
+  const CALENDAR_LOCATION = "ASK Hall, Coimbatore";
+  const CALENDAR_DETAILS = "Muhurtham of Varshini & Advith · Vrischika Lagnam · Lunch to follow.";
+
+  function toIcsUtc(d) {
+    const p = (n) => String(n).padStart(2, "0");
+    return `${d.getUTCFullYear()}${p(d.getUTCMonth()+1)}${p(d.getUTCDate())}T${p(d.getUTCHours())}${p(d.getUTCMinutes())}${p(d.getUTCSeconds())}Z`;
+  }
+  function downloadWeddingIcs() {
+    const start = WEDDING_DATE;
+    const end = new Date(start.getTime() + 45 * 60 * 1000);
+    const now = new Date();
+    const uid = `varshini-advith-muhurtham-${start.getTime()}@wedding`;
+    const esc = (s) => String(s).replace(/\\/g, "\\\\").replace(/,/g, "\\,").replace(/;/g, "\\;").replace(/\n/g, "\\n");
+    const ics = [
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//Advith Varshini Wedding//EN",
+      "CALSCALE:GREGORIAN",
+      "METHOD:PUBLISH",
+      "BEGIN:VEVENT",
+      `UID:${uid}`,
+      `DTSTAMP:${toIcsUtc(now)}`,
+      `DTSTART:${toIcsUtc(start)}`,
+      `DTEND:${toIcsUtc(end)}`,
+      `SUMMARY:${esc(CALENDAR_TITLE)}`,
+      `LOCATION:${esc(CALENDAR_LOCATION)}`,
+      `DESCRIPTION:${esc(CALENDAR_DETAILS)}`,
+      "BEGIN:VALARM",
+      "ACTION:DISPLAY",
+      "DESCRIPTION:Reminder",
+      "TRIGGER:-P1D",
+      "END:VALARM",
+      "END:VEVENT",
+      "END:VCALENDAR",
+    ].join("\r\n");
+
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    if (isIOS) {
+      window.location.href = "data:text/calendar;charset=utf-8," + encodeURIComponent(ics);
+      return;
+    }
+    const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Varshini-Advith-Marriage.ics";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+  }
 
   /* ---------- hooks/use-mobile ---------- */
   const MOBILE_BREAKPOINT = 768;
@@ -986,18 +1038,13 @@
     { key: "devatha", title: "Devatha Karyam", subtitle: "Family Ceremony",
       when: "23 · Nov · 2026 · Monday · 9:00 AM onwards",
       where: "At Groom’s Residence, Kollegal",
-      img: "images/couple-devathakarya.png",
+      img: "images/couple-devathakarya1.png",
       note: "A sacred family gathering to invoke divine blessings. Lunch to follow." },
     { key: "reception", title: "Reception", subtitle: "",
       when: "28 · Nov · 2026 · Saturday · 6:00 PM onwards",
       where: "ASK Hall, Coimbatore",
       img: "images/couple-reception.png",
       note: "An evening of blessings, dinner and celebration. Dinner to follow." },
-    { key: "muhurtham", title: "Muhurtham", subtitle: "Kalyanam",
-      when: "29 · Nov · 2026 · Sunday · 8:05 to 8:50 AM",
-      where: "ASK Hall, Coimbatore · Vrischika Lagnam",
-      img: "images/couple-wedding.png",
-      note: "The sacred vows before the holy fire. Lunch to follow." },
   ];
 
   function Functions() {
@@ -1005,7 +1052,7 @@
       <section id="functions" className="relative py-20 sm:py-28 bg-hero-veil">
         <div className="mx-auto max-w-6xl px-4">
           <Reveal><SectionTitle eyebrow="Our Celebrations" title="Wedding Functions"
-            subtitle="Four days of tradition, colour and joy. We would be honoured by your presence at each." /></Reveal>
+            subtitle="Three days of tradition, colour and joy. We would be honoured by your presence at each." /></Reveal>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2">
             {FUNCTIONS.map((f, i) => (
@@ -1019,7 +1066,9 @@
                            className="h-72 w-full bg-card-veil object-contain object-center sm:h-full" />
                     </div>
                     <div className="sm:col-span-3 p-6 sm:p-7">
-                      <p className="font-script text-primary/80 text-2xl">{f.subtitle}</p>
+                      {f.subtitle
+                        ? <p className="font-script text-primary/80 text-2xl">{f.subtitle}</p>
+                        : <p className="font-script text-transparent select-none text-2xl" aria-hidden>·</p>}
                       <h3 className="text-gilded mt-1 text-2xl sm:text-3xl">{f.title}</h3>
                       <div className="mt-3"><GoldDivider label="✦" /></div>
                       <dl className="mt-3 space-y-2 text-sm text-foreground/90">
@@ -1051,16 +1100,16 @@
           <Reveal><SectionTitle eyebrow="The Muhurtham" title="Wedding Day"
             subtitle="With hearts full of gratitude, we invite you to the most sacred day of our lives." /></Reveal>
 
-          <div className="mt-12 grid items-center gap-10 md:grid-cols-2">
-            <Reveal delay={80}>
-              <div className="gold-frame bg-card-veil relative overflow-hidden rounded-3xl">
+          <div className="mt-12 grid gap-10 md:grid-cols-2 items-stretch">
+            <Reveal delay={80} className="h-full">
+              <div className="gold-frame bg-card-veil relative overflow-hidden rounded-3xl h-full">
                 <CornerFloral position="tl" /><CornerFloral position="tr" />
                 <CornerFloral position="bl" /><CornerFloral position="br" />
-                <img src="images/couple-wedding.png" alt="Wedding day portrait" className="h-full w-full object-cover" />
+                <img src="images/couple-wedding.png" alt="Wedding day portrait" className="h-full w-full object-contain bg-card-veil" />
               </div>
             </Reveal>
-            <Reveal delay={160}>
-              <div className="gold-frame bg-card-veil rounded-3xl p-6 sm:p-10">
+            <Reveal delay={160} className="h-full">
+              <div className="gold-frame bg-card-veil rounded-3xl p-6 sm:p-10 h-full flex flex-col justify-center">
                 <p className="font-script text-primary/80 text-2xl sm:text-3xl">Save the Date</p>
                 <h3 className="text-gilded mt-1 text-4xl leading-tight sm:text-6xl">{WEDDING_DATE_LABEL}</h3>
                 <GoldDivider label="✦" />
@@ -1079,8 +1128,12 @@
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-3">
-                  <a href="#location" onClick={(e) => { e.preventDefault(); document.getElementById("location")?.scrollIntoView({behavior:"smooth"}); }}
+                  <button type="button" onClick={downloadWeddingIcs}
                      className="bg-primary text-primary-foreground shadow-petal hover:shadow-gold rounded-full px-5 py-2.5 text-[0.65rem] tracking-[0.28em] uppercase transition-all hover:-translate-y-0.5">
+                     ✦ Save to Calendar
+                  </button>
+                  <a href="#location" onClick={(e) => { e.preventDefault(); document.getElementById("location")?.scrollIntoView({behavior:"smooth"}); }}
+                     className="gold-frame bg-card text-primary rounded-full px-5 py-2.5 text-[0.65rem] tracking-[0.28em] uppercase transition-all hover:-translate-y-0.5">
                      View Location
                   </a>
                   <a href="#rsvp" onClick={(e) => { e.preventDefault(); document.getElementById("rsvp")?.scrollIntoView({behavior:"smooth"}); }}
