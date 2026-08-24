@@ -1,0 +1,1197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Varshini &amp; Advith · Wedding Invitation</title>
+<meta name="description" content="A South Indian wedding celebration — Varshini and Advith invite you to bless their forever." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          background: 'var(--background)',
+          foreground: 'var(--foreground)',
+          card: 'var(--card)',
+          'card-foreground': 'var(--card-foreground)',
+          primary: 'var(--primary)',
+          'primary-foreground': 'var(--primary-foreground)',
+          secondary: 'var(--secondary)',
+          'secondary-foreground': 'var(--secondary-foreground)',
+          muted: 'var(--muted)',
+          'muted-foreground': 'var(--muted-foreground)',
+          accent: 'var(--accent)',
+          'accent-foreground': 'var(--accent-foreground)',
+          destructive: 'var(--destructive)',
+          'destructive-foreground': 'var(--destructive-foreground)',
+          border: 'var(--border)',
+          input: 'var(--input)',
+          ring: 'var(--ring)',
+          gold: 'var(--gold)',
+          'gold-soft': 'var(--gold-soft)',
+          blush: 'var(--blush)',
+          peach: 'var(--peach)',
+          marigold: 'var(--marigold)',
+          sage: 'var(--sage)',
+          ivory: 'var(--ivory)',
+          maroon: 'var(--maroon)',
+        },
+        fontFamily: {
+          display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+          body: ['Mulish', 'system-ui', 'sans-serif'],
+          script: ['"Great Vibes"', 'cursive'],
+        },
+        boxShadow: {
+          petal: '0 18px 45px -22px color-mix(in oklab, var(--maroon) 35%, transparent)',
+          gold: '0 10px 30px -12px color-mix(in oklab, var(--gold) 45%, transparent)',
+        },
+        animation: {
+          'float-soft': 'float-soft 6s ease-in-out infinite',
+          glow: 'diya-glow 3s ease-in-out infinite',
+          heartbeat: 'heartbeat 2.4s ease-in-out infinite',
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  /* -----------------------------------------------------------
+   * Design system: South Indian Hindu wedding invitation.
+   * Warm ivory base, blush / peach / marigold / sage accents,
+   * antique gold. Adapted from styles.css for the browser.
+   * ----------------------------------------------------------- */
+  :root {
+    --radius: 1.25rem;
+    --ivory: oklch(0.985 0.012 90);
+    --background: oklch(0.982 0.015 88);
+    --foreground: oklch(0.33 0.055 30);
+    --card: oklch(0.995 0.008 92);
+    --card-foreground: oklch(0.33 0.055 30);
+    --primary: oklch(0.52 0.13 33);
+    --primary-foreground: oklch(0.985 0.012 90);
+    --secondary: oklch(0.94 0.035 70);
+    --secondary-foreground: oklch(0.38 0.07 32);
+    --muted: oklch(0.955 0.02 85);
+    --muted-foreground: oklch(0.52 0.04 40);
+    --accent: oklch(0.92 0.05 45);
+    --accent-foreground: oklch(0.36 0.07 32);
+    --destructive: oklch(0.58 0.19 25);
+    --destructive-foreground: oklch(0.985 0.012 90);
+    --border: oklch(0.9 0.035 75);
+    --input: oklch(0.9 0.035 75);
+    --ring: oklch(0.72 0.09 75);
+    --gold: oklch(0.72 0.1 78);
+    --gold-soft: oklch(0.88 0.06 85);
+    --blush: oklch(0.88 0.06 20);
+    --peach: oklch(0.89 0.07 55);
+    --marigold: oklch(0.83 0.13 78);
+    --sage: oklch(0.83 0.05 140);
+    --maroon: oklch(0.42 0.13 25);
+
+    --gradient-hero: radial-gradient(120% 90% at 50% 0%,
+        color-mix(in oklab, var(--peach) 55%, transparent), transparent 60%),
+      linear-gradient(180deg, var(--ivory),
+        color-mix(in oklab, var(--blush) 28%, var(--ivory)));
+    --gradient-gold: linear-gradient(100deg,
+      color-mix(in oklab, var(--gold) 70%, white),
+      var(--gold),
+      color-mix(in oklab, var(--maroon) 30%, var(--gold)),
+      var(--gold),
+      color-mix(in oklab, var(--gold) 70%, white));
+    --gradient-card: linear-gradient(160deg,
+      color-mix(in oklab, var(--ivory) 92%, white),
+      color-mix(in oklab, var(--peach) 22%, var(--ivory)));
+  }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: 'Mulish', system-ui, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  /* Named utilities from the design system */
+  .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .font-script  { font-family: 'Great Vibes', cursive; }
+
+  .bg-hero-veil { background-image: var(--gradient-hero); }
+  .bg-card-veil { background-image: var(--gradient-card); }
+
+  .text-gilded {
+    background-image: var(--gradient-gold);
+    background-size: 220% auto;
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    animation: shimmer 7s linear infinite;
+  }
+
+  .gold-frame {
+    border: 1px solid color-mix(in oklab, var(--gold) 55%, transparent);
+    box-shadow:
+      inset 0 0 0 4px color-mix(in oklab, var(--ivory) 80%, transparent),
+      inset 0 0 0 5px color-mix(in oklab, var(--gold) 30%, transparent),
+      0 18px 45px -22px color-mix(in oklab, var(--maroon) 35%, transparent);
+  }
+
+  .kolam-rule {
+    display: inline-block;
+    height: 1px;
+    background: linear-gradient(90deg, transparent,
+      color-mix(in oklab, var(--gold) 70%, transparent), transparent);
+  }
+
+  .reveal { opacity: 0; }
+  .reveal[data-visible="true"] {
+    animation: reveal-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .shadow-petal { box-shadow: 0 18px 45px -22px color-mix(in oklab, var(--maroon) 35%, transparent); }
+  .shadow-gold  { box-shadow: 0 10px 30px -12px color-mix(in oklab, var(--gold) 45%, transparent); }
+
+  /* Keyframes */
+  @keyframes petal-fall {
+    0%   { transform: translate3d(0, -10vh, 0) rotate(0deg); opacity: 0; }
+    10%  { opacity: 0.9; }
+    100% { transform: translate3d(var(--drift, 40px), 110vh, 0) rotate(420deg); opacity: 0; }
+  }
+  @keyframes float-soft {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+  }
+  @keyframes diya-glow {
+    0%, 100% { opacity: 0.55; transform: scale(0.95); }
+    50%      { opacity: 1;    transform: scale(1.08); }
+  }
+  @keyframes shimmer { to { background-position: 220% center; } }
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    30%      { transform: scale(1.16); }
+    60%      { transform: scale(1.02); }
+  }
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(26px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
+</head>
+<body class="antialiased">
+  <div id="root"></div>
+
+  <!-- React (production, min) + ReactDOM + Babel for in-browser JSX -->
+  <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/plain" id="app-jsx">
+  const { useCallback, useEffect, useRef, useState } = React;
+
+  /* ---------- lib/wedding constants ---------- */
+  const WEDDING_DATE = new Date("2026-11-29T08:05:00+05:30");
+  const WEDDING_DATE_LABEL = "29 · November · 2026";
+  const MUSIC_SRC = ""; // Add an audio URL to enable playback.
+
+  /* ---------- hooks/use-mobile ---------- */
+  const MOBILE_BREAKPOINT = 768;
+  function useIsMobile() {
+    const [isMobile, setIsMobile] = useState(undefined);
+    useEffect(() => {
+      const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);
+      const onChange = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+      mql.addEventListener("change", onChange);
+      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+      return () => mql.removeEventListener("change", onChange);
+    }, []);
+    return !!isMobile;
+  }
+
+  /* ---------- wedding/Reveal ---------- */
+  function Reveal({ children, delay = 0, className = "" }) {
+    const ref = useRef(null);
+    const [visible, setVisible] = useState(false);
+    useEffect(() => {
+      const el = ref.current;
+      if (!el) return;
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              setVisible(true);
+              io.unobserve(entry.target);
+            }
+          }
+        },
+        { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
+      );
+      io.observe(el);
+      return () => io.disconnect();
+    }, []);
+    return (
+      <div
+        ref={ref}
+        data-visible={visible}
+        className={`reveal ${className}`}
+        style={{ animationDelay: `${delay}ms` }}
+      >
+        {children}
+      </div>
+    );
+  }
+
+  /* ---------- wedding/Ornaments ---------- */
+  function GoldDivider({ label = "❤" }) {
+    return (
+      <div className="flex items-center justify-center gap-3 py-2">
+        <span className="kolam-rule w-16 sm:w-28" />
+        <span className="text-gold text-sm">{label}</span>
+        <span className="kolam-rule w-16 sm:w-28" />
+      </div>
+    );
+  }
+
+  function Toran() {
+    return (
+      <div aria-hidden className="flex w-full justify-center gap-1 overflow-hidden px-2">
+        {Array.from({ length: 24 }).map((_, i) => (
+          <span
+            key={i}
+            className="bg-sage/80 block origin-top rounded-b-full"
+            style={{
+              width: 10,
+              height: 16 + (i % 3) * 10,
+              transform: `rotate(${(i % 2 === 0 ? 1 : -1) * 6}deg)`,
+              opacity: 0.8,
+            }}
+          />
+        ))}
+      </div>
+    );
+  }
+
+  function Diya({ className = "" }) {
+    return (
+      <span aria-hidden className={`relative inline-block ${className}`}>
+        <span className="bg-marigold absolute -top-3 left-1/2 h-4 w-3 -translate-x-1/2 rounded-full animate-glow" style={{ filter: "blur(3px)" }} />
+        <span className="border-gold/60 bg-gold-soft block h-2.5 w-7 rounded-b-full border" />
+      </span>
+    );
+  }
+
+  function CornerFloral({ position }) {
+    const map = {
+      tl: "top-2 left-2",
+      tr: "top-2 right-2 rotate-90",
+      bl: "bottom-2 left-2 -rotate-90",
+      br: "bottom-2 right-2 rotate-180",
+    };
+    return (
+      <svg
+        aria-hidden viewBox="0 0 60 60"
+        className={`text-gold/60 pointer-events-none absolute h-10 w-10 ${map[position]}`}
+        fill="none" stroke="currentColor" strokeWidth="1.1"
+      >
+        <path d="M2 2c14 0 26 12 26 26" />
+        <path d="M2 12c10 2 16 8 18 18" />
+        <circle cx="30" cy="30" r="3" />
+        <path d="M36 24c4-4 10-4 14 0-4 4-10 4-14 0z" />
+        <path d="M24 36c-4 4-4 10 0 14 4-4 4-10 0-14z" />
+      </svg>
+    );
+  }
+
+  function SectionTitle({ eyebrow, title, subtitle }) {
+    return (
+      <div className="mx-auto max-w-2xl text-center">
+        {eyebrow ? (
+          <p className="font-script text-primary/80 text-2xl sm:text-3xl">{eyebrow}</p>
+        ) : null}
+        <h2 className="text-gilded mt-1 text-3xl leading-tight sm:text-5xl">{title}</h2>
+        <GoldDivider />
+        {subtitle ? (
+          <p className="text-muted-foreground text-sm leading-relaxed sm:text-base">{subtitle}</p>
+        ) : null}
+      </div>
+    );
+  }
+
+  /* ---------- wedding/Petals ---------- */
+  const PETALS = Array.from({ length: 16 }, (_, i) => {
+    const seed = (i * 37) % 100;
+    return {
+      left: `${(seed * 1.03) % 100}%`,
+      size: 8 + (seed % 10),
+      duration: 12 + (seed % 9),
+      delay: -(seed % 14),
+      drift: `${(seed % 2 === 0 ? 1 : -1) * (30 + (seed % 60))}px`,
+      tone: i % 3,
+    };
+  });
+  const PETAL_TONES = ["bg-blush", "bg-peach", "bg-marigold"];
+
+  function Petals({ density = 1 }) {
+    const petals = PETALS.slice(0, Math.max(4, Math.round(PETALS.length * density)));
+    return (
+      <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        {petals.map((p, i) => (
+          <span
+            key={i}
+            className={`absolute top-0 block opacity-70 ${PETAL_TONES[p.tone]}`}
+            style={{
+              left: p.left,
+              width: p.size,
+              height: p.size * 0.7,
+              borderRadius: "60% 40% 55% 45% / 50% 60% 40% 50%",
+              animation: `petal-fall ${p.duration}s linear ${p.delay}s infinite`,
+              "--drift": p.drift,
+            }}
+          />
+        ))}
+      </div>
+    );
+  }
+
+  /* ---------- wedding/Countdown ---------- */
+  const diff = () => Math.max(0, WEDDING_DATE.getTime() - Date.now());
+
+  function Countdown() {
+    const [ms, setMs] = useState(null);
+    useEffect(() => {
+      setMs(diff());
+      const id = setInterval(() => setMs(diff()), 1000);
+      return () => clearInterval(id);
+    }, []);
+
+    if (ms === null) return <div className="h-24" />;
+    if (ms === 0) {
+      return <p className="font-display text-primary text-3xl sm:text-5xl">The day has arrived! ❤️</p>;
+    }
+    const total = Math.floor(ms / 1000);
+    const units = [
+      { label: "Days",    value: Math.floor(total / 86400) },
+      { label: "Hours",   value: Math.floor((total % 86400) / 3600) },
+      { label: "Minutes", value: Math.floor((total % 3600) / 60) },
+      { label: "Seconds", value: total % 60 },
+    ];
+    return (
+      <div className="grid grid-cols-4 gap-2 sm:gap-5">
+        {units.map((u) => (
+          <div key={u.label} className="gold-frame bg-card-veil rounded-2xl px-1 py-4 text-center sm:py-6">
+            <div className="font-display text-primary text-2xl sm:text-5xl" style={{ fontVariantNumeric: "tabular-nums" }}>
+              {String(u.value).padStart(2, "0")}
+            </div>
+            <div className="text-muted-foreground mt-1 text-[0.6rem] tracking-[0.2em] uppercase sm:text-xs">
+              {u.label}
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  /* ---------- wedding/MusicToggle ---------- */
+  function MusicToggle() {
+    const audioRef = useRef(null);
+    const [playing, setPlaying] = useState(false);
+    const [note, setNote] = useState(null);
+
+    const toggle = async () => {
+      const el = audioRef.current;
+      if (!MUSIC_SRC || !el) {
+        setNote("Music coming soon");
+        setTimeout(() => setNote(null), 2200);
+        return;
+      }
+      if (playing) { el.pause(); setPlaying(false); return; }
+      try { await el.play(); setPlaying(true); }
+      catch { setNote("Tap again to play"); setTimeout(() => setNote(null), 2200); }
+    };
+
+    return (
+      <div className="fixed right-4 bottom-4 z-50 flex items-center gap-2">
+        {note ? (
+          <span className="bg-card text-muted-foreground gold-frame rounded-full px-3 py-1.5 text-xs">
+            {note}
+          </span>
+        ) : null}
+        <button
+          type="button" onClick={toggle} aria-pressed={playing}
+          aria-label={playing ? "Turn wedding music off" : "Turn wedding music on"}
+          className="gold-frame bg-card text-primary flex h-12 w-12 items-center justify-center rounded-full text-lg transition-transform hover:scale-105"
+        >
+          {playing ? "♪♪" : "♫"}
+        </button>
+        {MUSIC_SRC ? <audio ref={audioRef} src={MUSIC_SRC} loop preload="none" /> : null}
+      </div>
+    );
+  }
+
+  /* ---------- wedding/Nav ---------- */
+  const NAV_LINKS = [
+    { id: "home",        label: "Home" },
+    { id: "compliments", label: "Compliments" },
+    { id: "functions",   label: "Functions" },
+    { id: "wedding",     label: "Wedding" },
+    { id: "rsvp",        label: "RSVP" },
+    { id: "location",    label: "Location" },
+  ];
+
+  function Nav() {
+    const [open, setOpen] = useState(false);
+    const [solid, setSolid] = useState(false);
+    useEffect(() => {
+      const onScroll = () => setSolid(window.scrollY > 40);
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+      return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+    const go = (id) => {
+      setOpen(false);
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+    return (
+      <header
+        className={`fixed inset-x-0 top-0 z-40 transition-all ${
+          solid ? "bg-background/85 border-b border-gold/25 backdrop-blur-md" : "bg-transparent"
+        }`}
+      >
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+          <button type="button" onClick={() => go("home")} className="font-script text-primary text-2xl">
+            A <span className="text-gold text-lg">✦</span> V
+          </button>
+          <ul className="hidden items-center gap-7 md:flex">
+            {NAV_LINKS.map((l) => (
+              <li key={l.id}>
+                <button
+                  type="button" onClick={() => go(l.id)}
+                  className="text-muted-foreground hover:text-primary relative text-xs tracking-[0.18em] uppercase transition-colors"
+                >
+                  {l.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+          <button
+            type="button" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="gold-frame bg-card text-primary flex h-10 w-10 flex-col items-center justify-center gap-1 rounded-full md:hidden"
+          >
+            <span className={`bg-primary block h-px w-4 transition-transform ${open ? "translate-y-[3px] rotate-45" : ""}`} style={{ backgroundColor: "var(--primary)" }} />
+            <span className={`block h-px w-4 transition-opacity ${open ? "opacity-0" : ""}`} style={{ backgroundColor: "var(--primary)" }} />
+            <span className={`block h-px w-4 transition-transform ${open ? "-translate-y-[5px] -rotate-45" : ""}`} style={{ backgroundColor: "var(--primary)" }} />
+          </button>
+        </nav>
+        {open ? (
+          <div className="bg-background/95 border-t border-gold/25 px-4 pb-5 backdrop-blur-md md:hidden">
+            <ul className="divide-y divide-gold/15">
+              {NAV_LINKS.map((l) => (
+                <li key={l.id}>
+                  <button type="button" onClick={() => go(l.id)}
+                    className="text-secondary-foreground w-full py-3.5 text-left text-sm tracking-[0.2em] uppercase">
+                    {l.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+      </header>
+    );
+  }
+
+  /* ---------- wedding/Rsvp ---------- */
+  function Rsvp() {
+    const [name, setName] = useState("");
+    const [guests, setGuests] = useState("1");
+    const [attendance, setAttendance] = useState(null);
+    const [message, setMessage] = useState("");
+    const [errors, setErrors] = useState({});
+    const [sending, setSending] = useState(false);
+    const [done, setDone] = useState(false);
+
+    const submit = async (e) => {
+      e.preventDefault();
+      const next = {};
+      if (name.trim().length < 2) next.name = "Please tell us your name";
+      const count = Number(guests);
+      if (!Number.isFinite(count) || count < 1 || count > 20)
+        next.guests = "Enter a number between 1 and 20";
+      if (!attendance) next.attendance = "Please choose an option";
+      setErrors(next);
+      if (Object.keys(next).length > 0) return;
+
+      setSending(true);
+      const payload = { name: name.trim(), guests: count, attendance, message: message.trim() };
+      console.info("RSVP submitted", payload);
+      await new Promise((r) => setTimeout(r, 700));
+      setSending(false);
+      setDone(true);
+    };
+
+    if (done) {
+      return (
+        <div className="gold-frame bg-card-veil relative mx-auto max-w-lg rounded-3xl px-6 py-12 text-center">
+          <div className="animate-heartbeat text-4xl">❤️</div>
+          <h3 className="text-gilded mt-4 text-2xl sm:text-3xl">Thank you!</h3>
+          <p className="text-muted-foreground mt-2 text-sm sm:text-base">
+            We can’t wait to celebrate with you ❤️
+          </p>
+          <button type="button"
+            onClick={() => { setDone(false); setName(""); setGuests("1"); setAttendance(null); setMessage(""); }}
+            className="text-muted-foreground hover:text-primary mt-6 text-xs underline underline-offset-4">
+            Send another response
+          </button>
+        </div>
+      );
+    }
+
+    const fieldClass =
+      "w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-shadow placeholder:text-muted-foreground/70 focus:border-gold focus:shadow-gold";
+
+    return (
+      <form onSubmit={submit} noValidate
+        className="gold-frame bg-card-veil mx-auto max-w-lg space-y-5 rounded-3xl p-6 sm:p-8">
+        <div className="space-y-1.5">
+          <label htmlFor="rsvp-name" className="text-secondary-foreground text-xs tracking-widest uppercase">Name</label>
+          <input id="rsvp-name" value={name} onChange={(e) => setName(e.target.value)}
+                 placeholder="Your full name" className={fieldClass} />
+          {errors.name ? <p className="text-destructive text-xs">{errors.name}</p> : null}
+        </div>
+
+        <div className="space-y-1.5">
+          <label htmlFor="rsvp-guests" className="text-secondary-foreground text-xs tracking-widest uppercase">Number of Guests</label>
+          <input id="rsvp-guests" inputMode="numeric" value={guests}
+                 onChange={(e) => setGuests(e.target.value)} className={fieldClass} />
+          {errors.guests ? <p className="text-destructive text-xs">{errors.guests}</p> : null}
+        </div>
+
+        <div className="space-y-2">
+          <span className="text-secondary-foreground block text-xs tracking-widest uppercase">
+            Will you be joining us?
+          </span>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {[
+              { key: "accept",  label: "Joyfully Accept" },
+              { key: "decline", label: "Regretfully Decline" },
+            ].map((opt) => (
+              <button key={opt.key} type="button"
+                onClick={() => setAttendance(opt.key)}
+                aria-pressed={attendance === opt.key}
+                className={`rounded-xl border px-4 py-3 text-sm transition-all ${
+                  attendance === opt.key
+                    ? "border-gold bg-secondary text-secondary-foreground shadow-gold"
+                    : "border-border bg-card text-muted-foreground hover:border-gold/60"
+                }`}>
+                {opt.label}
+              </button>
+            ))}
+          </div>
+          {errors.attendance ? <p className="text-destructive text-xs">{errors.attendance}</p> : null}
+        </div>
+
+        <div className="space-y-1.5">
+          <label htmlFor="rsvp-message" className="text-secondary-foreground text-xs tracking-widest uppercase">
+            A message for us (optional)
+          </label>
+          <textarea id="rsvp-message" rows={3} value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Your blessings and wishes…"
+            className={`${fieldClass} resize-none`} />
+        </div>
+
+        <button type="submit" disabled={sending}
+          className="bg-primary text-primary-foreground shadow-petal hover:shadow-gold w-full rounded-full px-6 py-3.5 text-xs tracking-[0.28em] uppercase transition-all hover:-translate-y-0.5 disabled:opacity-70">
+          {sending ? "Sending…" : "Send RSVP"}
+        </button>
+      </form>
+    );
+  }
+
+  /* ---------- wedding/ScratchCard ---------- */
+  const CONFETTI = Array.from({ length: 26 }, (_, i) => ({
+    left: `${(i * 97) % 100}%`,
+    delay: (i % 8) * 0.08,
+    duration: 2.2 + ((i * 13) % 10) / 10,
+    tone: i % 3,
+    size: 6 + (i % 4) * 3,
+  }));
+  const CONFETTI_TONES = ["bg-blush", "bg-marigold", "bg-sage"];
+
+  function ScratchCard() {
+    const canvasRef = useRef(null);
+    const wrapRef = useRef(null);
+    const drawing = useRef(false);
+    const last = useRef(null);
+    const [revealed, setRevealed] = useState(false);
+
+    const paintCover = useCallback((canvas) => {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.max(1, Math.floor(rect.width * dpr));
+      canvas.height = Math.max(1, Math.floor(rect.height * dpr));
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+      ctx.scale(dpr, dpr);
+      const g = ctx.createLinearGradient(0, 0, rect.width, rect.height);
+      g.addColorStop(0,   "#f6dfc4");
+      g.addColorStop(0.45,"#e8c08c");
+      g.addColorStop(0.7, "#d9a866");
+      g.addColorStop(1,   "#f3d9b6");
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, rect.width, rect.height);
+
+      ctx.strokeStyle = "rgba(255,255,255,0.5)";
+      ctx.lineWidth = 1;
+      for (let i = -rect.height; i < rect.width; i += 18) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i + rect.height, rect.height);
+        ctx.stroke();
+      }
+      ctx.fillStyle = "rgba(255,255,255,0.55)";
+      for (let i = 0; i < 40; i++) {
+        const x = ((i * 73) % 100) * (rect.width / 100);
+        const y = ((i * 149) % 100) * (rect.height / 100);
+        ctx.beginPath();
+        ctx.arc(x, y, 1.6 + (i % 3), 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.fillStyle = "#7a3b28";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.font = `600 ${Math.max(16, rect.width * 0.055)}px Mulish, sans-serif`;
+      ctx.fillText("Scratch Me \u2665", rect.width / 2, rect.height / 2 - 6);
+      ctx.font = `400 ${Math.max(10, rect.width * 0.028)}px Mulish, sans-serif`;
+      ctx.fillText("use your finger or mouse", rect.width / 2, rect.height / 2 + 22);
+    }, []);
+
+    useEffect(() => {
+      const canvas = canvasRef.current;
+      if (!canvas || revealed) return;
+      paintCover(canvas);
+      const onResize = () => paintCover(canvas);
+      window.addEventListener("resize", onResize);
+      return () => window.removeEventListener("resize", onResize);
+    }, [paintCover, revealed]);
+
+    const pointFrom = (e) => {
+      const canvas = canvasRef.current;
+      const rect = canvas.getBoundingClientRect();
+      return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    };
+
+    const clearedRatio = () => {
+      const canvas = canvasRef.current;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return 0;
+      const { width, height } = canvas;
+      const data = ctx.getImageData(0, 0, width, height).data;
+      let clear = 0, total = 0;
+      for (let i = 3; i < data.length; i += 4 * 24) {
+        total++;
+        if (data[i] < 40) clear++;
+      }
+      return total ? clear / total : 0;
+    };
+
+    const scratchTo = (x, y) => {
+      const canvas = canvasRef.current;
+      const ctx = canvas && canvas.getContext("2d");
+      if (!canvas || !ctx) return;
+      ctx.globalCompositeOperation = "destination-out";
+      const radius = Math.max(18, canvas.getBoundingClientRect().width * 0.055);
+      ctx.lineWidth = radius * 2;
+      ctx.lineCap = "round";
+      ctx.lineJoin = "round";
+      ctx.beginPath();
+      if (last.current) {
+        ctx.moveTo(last.current.x, last.current.y);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+      }
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.fill();
+      last.current = { x, y };
+    };
+
+    const onPointerDown = (e) => {
+      if (revealed) return;
+      drawing.current = true; last.current = null;
+      e.currentTarget.setPointerCapture(e.pointerId);
+      const p = pointFrom(e); scratchTo(p.x, p.y);
+    };
+    const onPointerMove = (e) => {
+      if (!drawing.current || revealed) return;
+      e.preventDefault();
+      const p = pointFrom(e); scratchTo(p.x, p.y);
+    };
+    const finish = () => {
+      if (!drawing.current || revealed) return;
+      drawing.current = false; last.current = null;
+      if (clearedRatio() > 0.45) setRevealed(true);
+    };
+
+    return (
+      <div ref={wrapRef} className="relative mx-auto w-full max-w-md">
+        <div className="gold-frame bg-card-veil relative overflow-hidden rounded-3xl p-1">
+          <div className="relative w-full overflow-hidden rounded-[1.4rem]" style={{ aspectRatio: "4 / 3" }}>
+            <div className="bg-card-veil absolute inset-0 flex flex-col items-center justify-center gap-2 px-6 text-center">
+              <span className="font-script text-primary/80 text-2xl">Save the Date</span>
+              <span className="text-gilded font-display text-3xl leading-tight sm:text-4xl">
+                {WEDDING_DATE_LABEL}
+              </span>
+              <span className="text-muted-foreground text-xs tracking-[0.28em] uppercase">
+                Varshini ❤️ Advith
+              </span>
+            </div>
+            {!revealed && (
+              <canvas ref={canvasRef}
+                aria-label="Scratch card: scratch to reveal the wedding date"
+                className="absolute inset-0 h-full w-full cursor-grab touch-none active:cursor-grabbing"
+                onPointerDown={onPointerDown}
+                onPointerMove={onPointerMove}
+                onPointerUp={finish}
+                onPointerLeave={finish}
+                onPointerCancel={finish}
+              />
+            )}
+          </div>
+        </div>
+        {revealed && (
+          <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+            {CONFETTI.map((c, i) => (
+              <span key={i} className={`absolute top-0 block rounded-full ${CONFETTI_TONES[c.tone]}`}
+                style={{
+                  left: c.left, width: c.size, height: c.size * 0.7,
+                  animation: `petal-fall ${c.duration}s ease-in ${c.delay}s 1 forwards`,
+                  "--drift": `${(i % 2 ? 1 : -1) * 40}px`,
+                }}
+              />
+            ))}
+          </div>
+        )}
+        {!revealed && (
+          <button type="button" onClick={() => setRevealed(true)}
+            className="text-muted-foreground hover:text-primary mx-auto mt-4 block text-xs underline underline-offset-4 transition-colors">
+            Reveal without scratching
+          </button>
+        )}
+        {revealed && (
+          <p className="font-script text-primary mt-4 text-center text-2xl">
+            Our forever begins that day
+          </p>
+        )}
+      </div>
+    );
+  }
+
+  /* ================== PAGE ================== */
+
+  function Hero() {
+    return (
+      <section id="home" className="bg-hero-veil relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24">
+        <Toran />
+        <div className="mx-auto max-w-5xl px-4 pt-6 text-center relative">
+          <CornerFloral position="tl" />
+          <CornerFloral position="tr" />
+          <CornerFloral position="bl" />
+          <CornerFloral position="br" />
+
+          <img src="images/ganesha.png" alt="Lord Ganesha"
+               className="mx-auto h-32 w-32 sm:h-44 sm:w-44 animate-float-soft"
+               style={{ filter: "drop-shadow(0 12px 22px rgba(122,59,40,0.25))" }} />
+
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm sm:text-base">
+            <span className="font-display text-primary">Shri Ramalinga Chowdeshwari Krupe</span>
+            <span className="text-gold hidden sm:inline">✦</span>
+            <span className="font-display text-primary">Shri Sone Veerabhadra Swamy Krupe</span>
+            <span className="text-gold hidden sm:inline">✦</span>
+            <span className="font-display text-primary">Shri Veeramathre Ammana Krupe</span>
+          </div>
+
+          <div className="mt-6 space-y-4 sm:space-y-5">
+            <div>
+              <h1 className="text-gilded font-display text-4xl leading-tight sm:text-6xl">
+                Chi. Sou. Vishnu Varshini S
+              </h1>
+              <p className="text-muted-foreground mt-1 text-xs sm:text-sm italic">
+                D/o Smt. S. Vijaya Priya &amp; Shri. Sri Hari Balakrishnan
+              </p>
+            </div>
+
+            <p className="font-script text-gold text-3xl sm:text-4xl">Weds</p>
+
+            <div>
+              <h1 className="text-gilded font-display text-4xl leading-tight sm:text-6xl">
+                Chi. Ry. Advith Cugati V
+              </h1>
+              <p className="text-muted-foreground mt-1 text-xs sm:text-sm italic">
+                S/o Smt. C. Vijayalakshmi &amp; Shri. C. Veerabhadra Swamy
+              </p>
+            </div>
+          </div>
+
+          <GoldDivider label="✦" />
+          <p className="text-muted-foreground mx-auto max-w-xl text-sm leading-relaxed sm:text-base">
+            With the blessings of our families and elders, we invite you to grace the auspicious
+            wedding ceremony of our beloved children.
+          </p>
+
+          <div className="mt-8 sm:mt-12">
+            <Countdown />
+          </div>
+
+          <div className="mt-10 sm:mt-14 flex justify-center">
+            <ScratchCard />
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <a href="#rsvp" onClick={(e) => { e.preventDefault(); document.getElementById("rsvp")?.scrollIntoView({behavior:"smooth"}); }}
+               className="bg-primary text-primary-foreground shadow-petal hover:shadow-gold rounded-full px-6 py-3 text-xs tracking-[0.28em] uppercase transition-all hover:-translate-y-0.5">
+              Send RSVP
+            </a>
+            <a href="#wedding" onClick={(e) => { e.preventDefault(); document.getElementById("wedding")?.scrollIntoView({behavior:"smooth"}); }}
+               className="gold-frame bg-card text-primary rounded-full px-6 py-3 text-xs tracking-[0.28em] uppercase transition-all hover:-translate-y-0.5">
+               Wedding Details
+            </a>
+          </div>
+
+          <div className="mt-10 flex items-center justify-center gap-6">
+            <Diya /><Diya /><Diya />
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  function Story() {
+    return (
+      <section id="story" className="relative py-20 sm:py-28">
+        <div className="mx-auto max-w-6xl px-4">
+          <Reveal><SectionTitle eyebrow="Once upon a time…" title="Our Story"
+            subtitle="Two hearts, two families, one beautiful journey. Woven with laughter, patience, prayers and endless cups of filter coffee." /></Reveal>
+
+          <div className="mt-12 grid items-center gap-10 md:grid-cols-2">
+            <Reveal>
+              <div className="gold-frame bg-card-veil overflow-hidden rounded-3xl">
+                <img src="images/couple-story.png" alt="Advith and Varshini together"
+                     className="h-full w-full object-cover" />
+              </div>
+            </Reveal>
+            <Reveal delay={120}>
+              <div className="space-y-5 text-sm leading-relaxed sm:text-base text-foreground/90">
+                <p><span className="font-script text-primary text-2xl">A</span> chance meeting at a temple festival, a shared plate of prasadam, and a promise made under a canopy of jasmine — that is how our story began.</p>
+                <p>Years of long calls, family blessings, and small everyday joys later, we knew we had found our forever. What our elders arranged, our hearts happily agreed to.</p>
+                <p>Now, with the ashirwad of Sri Maha Ganapati and the blessings of our beloved families, we take the next sacred step — together.</p>
+                <div className="pt-2">
+                  <GoldDivider label="✦" />
+                  <p className="font-script text-primary text-center text-3xl">Advith &amp; Varshini</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const FUNCTIONS = [
+    { key: "devatha", title: "Devatha Karyam", subtitle: "Family Ceremony",
+      when: "23 · Nov · 2026 · Monday · 9:00 AM onwards",
+      where: "At Groom’s Residence, Kollegal",
+      img: "images/couple-devathakarya.png",
+      note: "A sacred family gathering to invoke divine blessings. Lunch to follow." },
+    { key: "reception", title: "Reception", subtitle: "Nichaya Virundhu",
+      when: "28 · Nov · 2026 · Saturday · 6:00 PM onwards",
+      where: "ASK Hall, Coimbatore",
+      img: "images/couple-reception.png",
+      note: "An evening of blessings, dinner and celebration. Dinner to follow." },
+    { key: "muhurtham", title: "Muhurtham", subtitle: "Kalyanam",
+      when: "29 · Nov · 2026 · Sunday · 8:05 to 8:50 AM",
+      where: "ASK Hall, Coimbatore · Vrischika Lagnam",
+      img: "images/couple-wedding.png",
+      note: "The sacred vows before the holy fire. Lunch to follow." },
+  ];
+
+  function Functions() {
+    return (
+      <section id="functions" className="relative py-20 sm:py-28 bg-hero-veil">
+        <div className="mx-auto max-w-6xl px-4">
+          <Reveal><SectionTitle eyebrow="Our Celebrations" title="Wedding Functions"
+            subtitle="Four days of tradition, colour and joy. We would be honoured by your presence at each." /></Reveal>
+
+          <div className="mt-12 grid gap-6 sm:grid-cols-2">
+            {FUNCTIONS.map((f, i) => (
+              <Reveal key={f.key} delay={i * 80}>
+                <article className="gold-frame bg-card-veil relative overflow-hidden rounded-3xl">
+                  <CornerFloral position="tl" />
+                  <CornerFloral position="br" />
+                  <div className="grid sm:grid-cols-5">
+                    <div className="sm:col-span-2 overflow-hidden">
+                      <img src={f.img} alt={f.title}
+                           className="h-72 w-full object-contain object-center sm:h-full sm:object-cover" />
+                    </div>
+                    <div className="sm:col-span-3 p-6 sm:p-7">
+                      <p className="font-script text-primary/80 text-2xl">{f.subtitle}</p>
+                      <h3 className="text-gilded mt-1 text-2xl sm:text-3xl">{f.title}</h3>
+                      <div className="mt-3"><GoldDivider label="✦" /></div>
+                      <dl className="mt-3 space-y-2 text-sm text-foreground/90">
+                        <div>
+                          <dt className="text-muted-foreground text-[0.65rem] tracking-[0.22em] uppercase">When</dt>
+                          <dd className="font-display text-lg">{f.when}</dd>
+                        </div>
+                        <div>
+                          <dt className="text-muted-foreground text-[0.65rem] tracking-[0.22em] uppercase">Where</dt>
+                          <dd>{f.where}</dd>
+                        </div>
+                      </dl>
+                      <p className="text-muted-foreground mt-4 text-xs italic sm:text-sm">{f.note}</p>
+                    </div>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  function WeddingDetails() {
+    return (
+      <section id="wedding" className="relative py-20 sm:py-28">
+        <div className="mx-auto max-w-6xl px-4">
+          <Reveal><SectionTitle eyebrow="The Muhurtham" title="Wedding Day"
+            subtitle="With hearts full of gratitude, we invite you to the most sacred day of our lives." /></Reveal>
+
+          <div className="mt-12 grid items-center gap-10 md:grid-cols-2">
+            <Reveal delay={80}>
+              <div className="gold-frame bg-card-veil relative overflow-hidden rounded-3xl">
+                <CornerFloral position="tl" /><CornerFloral position="tr" />
+                <CornerFloral position="bl" /><CornerFloral position="br" />
+                <img src="images/couple-wedding.png" alt="Wedding day portrait" className="h-full w-full object-cover" />
+              </div>
+            </Reveal>
+            <Reveal delay={160}>
+              <div className="gold-frame bg-card-veil rounded-3xl p-6 sm:p-10">
+                <p className="font-script text-primary/80 text-2xl sm:text-3xl">Save the Date</p>
+                <h3 className="text-gilded mt-1 text-4xl leading-tight sm:text-6xl">{WEDDING_DATE_LABEL}</h3>
+                <GoldDivider label="✦" />
+
+                <div className="mt-4 grid gap-5 sm:grid-cols-2 text-sm sm:text-base">
+                  <div>
+                    <p className="text-muted-foreground text-[0.65rem] tracking-[0.22em] uppercase">Muhurtham</p>
+                    <p className="font-display text-2xl">8:05 – 8:50 AM</p>
+                    <p className="text-muted-foreground text-xs">Sunday · Vrischika Lagnam</p>
+                  </div>
+                  <div>
+                    <p className="text-muted-foreground text-[0.65rem] tracking-[0.22em] uppercase">Venue</p>
+                    <p className="font-display text-2xl">ASK Hall</p>
+                    <p className="text-muted-foreground text-xs">Coimbatore · Lunch to Follow</p>
+                  </div>
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-3">
+                  <a href="#location" onClick={(e) => { e.preventDefault(); document.getElementById("location")?.scrollIntoView({behavior:"smooth"}); }}
+                     className="bg-primary text-primary-foreground shadow-petal hover:shadow-gold rounded-full px-5 py-2.5 text-[0.65rem] tracking-[0.28em] uppercase transition-all hover:-translate-y-0.5">
+                     View Location
+                  </a>
+                  <a href="#rsvp" onClick={(e) => { e.preventDefault(); document.getElementById("rsvp")?.scrollIntoView({behavior:"smooth"}); }}
+                     className="gold-frame bg-card text-primary rounded-full px-5 py-2.5 text-[0.65rem] tracking-[0.28em] uppercase transition-all hover:-translate-y-0.5">
+                     RSVP
+                  </a>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  function RsvpSection() {
+    return (
+      <section id="rsvp" className="relative py-20 sm:py-28 bg-hero-veil">
+        <div className="mx-auto max-w-6xl px-4">
+          <Reveal><SectionTitle eyebrow="Kindly Grace" title="RSVP"
+            subtitle="Your presence is our greatest blessing. Please let us know if you can join us for the celebrations." /></Reveal>
+          <div className="mt-12">
+            <Reveal delay={100}><Rsvp /></Reveal>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  function Location() {
+    const venues = [
+      {
+        label: "Devatha Karyam",
+        title: "Groom’s Residence",
+        address: "Kollegal, Karnataka",
+        when: "23 · Nov · 2026 · 9:00 AM onwards",
+        embed: "https://www.google.com/maps?q=Kollegal,Karnataka&output=embed",
+        link:  "https://maps.app.goo.gl/6TxY5NGawXp9nTNC9",
+      },
+      {
+        label: "Muhurtham & Reception",
+        title: "ASK Hall",
+        address: "Coimbatore, Tamil Nadu",
+        when: "28 · Nov (Reception) · 29 · Nov (Muhurtham) · 2026",
+        embed: "https://www.google.com/maps?q=ASK+Hall+Coimbatore&output=embed",
+        link:  "https://maps.app.goo.gl/kmcxmY5NyfjVWHBm9",
+      },
+    ];
+    return (
+      <section id="location" className="relative py-20 sm:py-28">
+        <div className="mx-auto max-w-6xl px-4">
+          <Reveal><SectionTitle eyebrow="Find Us" title="Venues"
+            subtitle="One at the Groom’s residence and one at the Kalyana Mandapam — please tap the pins for directions." /></Reveal>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
+            {venues.map((v, i) => (
+              <Reveal key={v.label} delay={80 + i * 80}>
+                <div className="gold-frame bg-card-veil overflow-hidden rounded-3xl">
+                  <div className="p-6 sm:p-7 text-center">
+                    <p className="font-script text-primary/80 text-2xl">{v.label}</p>
+                    <h3 className="text-gilded mt-1 text-2xl sm:text-3xl">{v.title}</h3>
+                    <GoldDivider label="✦" />
+                    <p className="text-foreground/90 text-sm">{v.address}</p>
+                    <p className="text-muted-foreground mt-1 text-xs">{v.when}</p>
+                  </div>
+                  <div className="relative w-full" style={{ aspectRatio: "16 / 10" }}>
+                    <iframe title={`${v.title} map`} src={v.embed}
+                            className="absolute inset-0 h-full w-full border-0" loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                  <div className="p-5 text-center">
+                    <a href={v.link} target="_blank" rel="noreferrer"
+                       className="bg-primary text-primary-foreground shadow-petal hover:shadow-gold inline-block rounded-full px-5 py-2.5 text-[0.65rem] tracking-[0.28em] uppercase transition-all hover:-translate-y-0.5">
+                       Open in Google Maps
+                    </a>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  function Compliments() {
+    const lines = [
+      "Sri Vardhan Sri Hari",
+      "Shri. Dr. Abhishek Cugati, Smt. Dr. Jayasri Sivani & Hrishani Cugati",
+      "Konapala Family, Sandhaa Family, Cugati Family",
+      "Relatives & Friends",
+    ];
+    return (
+      <section id="compliments" className="relative py-20 sm:py-28">
+        <div className="mx-auto max-w-5xl px-4">
+          <Reveal>
+            <SectionTitle eyebrow="With gratitude" title="With Best Compliments from"
+              subtitle="Our celebrations are made possible by the love and blessings of these dear ones." />
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="gold-frame bg-card-veil relative mx-auto mt-10 max-w-3xl rounded-3xl p-8 sm:p-12 text-center">
+              <CornerFloral position="tl" /><CornerFloral position="tr" />
+              <CornerFloral position="bl" /><CornerFloral position="br" />
+              <ul className="space-y-5 text-foreground/90 text-sm sm:text-base leading-relaxed">
+                {lines.map((l, i) => (
+                  <li key={i} className="font-display text-lg sm:text-xl">{l}</li>
+                ))}
+              </ul>
+              <div className="mt-8"><GoldDivider label="✦" /></div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+    );
+  }
+
+  function Footer() {
+    return (
+      <footer className="relative overflow-hidden bg-hero-veil pt-16 pb-24">
+        <Toran />
+        <div className="mx-auto mt-10 max-w-3xl px-4 text-center">
+          <div className="gold-frame bg-card-veil rounded-3xl p-8 sm:p-12 relative">
+            <CornerFloral position="tl" /><CornerFloral position="tr" />
+            <CornerFloral position="bl" /><CornerFloral position="br" />
+            <img src="images/couple-reception.png" alt="Reception moment"
+                 className="mx-auto -mt-24 h-40 w-40 sm:h-48 sm:w-48 rounded-full object-cover gold-frame" />
+            <p className="font-script text-primary mt-6 text-3xl sm:text-4xl">With love & gratitude</p>
+            <h3 className="text-gilded mt-1 text-3xl sm:text-4xl">Varshini &amp; Advith</h3>
+            <GoldDivider label="✦" />
+            <p className="text-muted-foreground text-xs sm:text-sm">
+              With the best compliments and blessings of<br/>
+              both our families
+            </p>
+            <p className="text-muted-foreground mt-6 text-[0.65rem] tracking-[0.28em] uppercase">
+              Made with ❤ for our loved ones
+            </p>
+          </div>
+        </div>
+      </footer>
+    );
+  }
+
+  function App() {
+    const isMobile = useIsMobile();
+    return (
+      <div className="relative">
+        <Petals density={isMobile ? 0.5 : 1} />
+        <Nav />
+        <main className="relative z-10">
+          <Hero />
+          <Compliments />
+          <Functions />
+          <WeddingDetails />
+          <RsvpSection />
+          <Location />
+        </main>
+        <Footer />
+        <MusicToggle />
+      </div>
+    );
+  }
+
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+  </script>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const src = document.getElementById("app-jsx").textContent;
+      const out = Babel.transform(src, {
+        presets: [["react", { runtime: "classic" }]],
+      }).code;
+      const s = document.createElement("script");
+      s.textContent = out;
+      document.body.appendChild(s);
+    });
+  </script>
+</body>
+</html>
