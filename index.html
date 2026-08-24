@@ -544,7 +544,25 @@
       setSending(true);
       const payload = { name: name.trim(), guests: count, attendance, message: message.trim() };
       console.info("RSVP submitted", payload);
-      await new Promise((r) => setTimeout(r, 700));
+
+      const attendanceLabel = attendance === "accept"
+        ? "Thank you for the beautiful invitation. We are honored to attend your wedding and look forward to celebrating with you and your families."
+        : "Unable to attend.";
+      const lines = [
+        "*Wedding RSVP — Varshini & Advith*",
+        "",
+        `*Name:* ${payload.name}`,
+        `*Guests:* ${payload.guests}`,
+        `*Attendance:* ${attendanceLabel}`,
+      ];
+      if (payload.message) {
+        lines.push(`*Message:* ${payload.message}`);
+      }
+      const waNumber = "919843651569";
+      const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+
+      await new Promise((r) => setTimeout(r, 400));
       setSending(false);
       setDone(true);
     };
@@ -555,7 +573,7 @@
           <div className="animate-heartbeat text-4xl">❤️</div>
           <h3 className="text-gilded mt-4 text-2xl sm:text-3xl">Thank you!</h3>
           <p className="text-muted-foreground mt-2 text-sm sm:text-base">
-            We can’t wait to celebrate with you ❤️
+            WhatsApp has opened with your message — please tap <span className="text-primary font-semibold">Send</span> to confirm your RSVP ❤️
           </p>
           <button type="button"
             onClick={() => { setDone(false); setName(""); setGuests("1"); setAttendance(null); setMessage(""); }}
@@ -622,7 +640,7 @@
 
         <button type="submit" disabled={sending}
           className="bg-primary text-primary-foreground shadow-petal hover:shadow-gold w-full rounded-full px-6 py-3.5 text-xs tracking-[0.28em] uppercase transition-all hover:-translate-y-0.5 disabled:opacity-70">
-          {sending ? "Sending…" : "Send RSVP"}
+          {sending ? "Opening WhatsApp…" : "Send RSVP via WhatsApp"}
         </button>
       </form>
     );
