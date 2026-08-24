@@ -8,7 +8,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Mulish:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -44,6 +44,8 @@
         },
         fontFamily: {
           display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+          alt: ['"Playfair Display"', 'Georgia', 'serif'],
+          fancy: ['"Dancing Script"', 'cursive'],
           body: ['Mulish', 'system-ui', 'sans-serif'],
           script: ['"Great Vibes"', 'cursive'],
         },
@@ -125,6 +127,8 @@
 
   /* Named utilities from the design system */
   .font-display { font-family: 'Cormorant Garamond', Georgia, serif; }
+  .font-alt     { font-family: 'Playfair Display', Georgia, serif; }
+  .font-fancy   { font-family: 'Dancing Script', cursive; }
   .font-script  { font-family: 'Great Vibes', cursive; }
 
   .bg-hero-veil { background-image: var(--gradient-hero); }
@@ -882,7 +886,7 @@
 
           <img src="images/ganesha.png" alt="Lord Ganesha"
                className="mx-auto h-44 w-44 sm:h-60 sm:w-60 animate-float-soft"
-               style={{ filter: "contrast(1.45) brightness(0.82) saturate(1.15) drop-shadow(0 12px 22px rgba(122,59,40,0.35))" }} />
+               style={{ filter: "contrast(2.6) brightness(0.4) saturate(1.4) drop-shadow(0 12px 22px rgba(122,59,40,0.45))" }} />
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm sm:text-base">
             <span className="font-display text-primary">Shri Ramalinga Chowdeshwari Krupe</span>
@@ -894,7 +898,7 @@
 
           <div className="mt-6 space-y-4 sm:space-y-5">
             <div>
-              <h1 className="text-gilded font-display text-4xl leading-tight sm:text-6xl">
+              <h1 className="text-gilded font-fancy text-5xl leading-[1.25] pb-2 sm:text-7xl">
                 Chi. Sou. Vishnu Varshini S
               </h1>
               <p className="text-muted-foreground mt-1 text-xs sm:text-sm italic">
@@ -905,7 +909,7 @@
             <p className="font-script text-gold text-3xl sm:text-4xl">Weds</p>
 
             <div>
-              <h1 className="text-gilded font-display text-4xl leading-tight sm:text-6xl">
+              <h1 className="text-gilded font-fancy text-5xl leading-[1.25] pb-2 sm:text-7xl">
                 Chi. Ry. Advith Cugati V
               </h1>
               <p className="text-muted-foreground mt-1 text-xs sm:text-sm italic">
