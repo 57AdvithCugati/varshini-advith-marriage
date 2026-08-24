@@ -197,6 +197,13 @@
 </style>
 </head>
 <body class="antialiased">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <filter id="ganesha-bolden" x="-10%" y="-10%" width="120%" height="120%">
+        <feMorphology operator="dilate" radius="1.2" />
+      </filter>
+    </defs>
+  </svg>
   <div id="root"></div>
 
   <!-- React (production, min) + ReactDOM + Babel for in-browser JSX -->
@@ -292,8 +299,15 @@
   function Diya({ className = "" }) {
     return (
       <span aria-hidden className={`relative inline-block ${className}`}>
-        <span className="bg-marigold absolute -top-3 left-1/2 h-4 w-3 -translate-x-1/2 rounded-full animate-glow" style={{ filter: "blur(3px)" }} />
-        <span className="border-gold/60 bg-gold-soft block h-2.5 w-7 rounded-b-full border" />
+        <span
+          className="absolute -top-3 left-1/2 h-3.5 w-2 -translate-x-1/2 animate-glow"
+          style={{
+            background: "radial-gradient(circle at 50% 65%, #fff2b0 0%, #ffb347 45%, #d9541b 100%)",
+            borderRadius: "50% 50% 45% 45% / 60% 60% 40% 40%",
+            boxShadow: "0 0 8px 2px rgba(255, 170, 60, 0.55)",
+          }}
+        />
+        <span className="border-gold bg-gold-soft block h-2.5 w-7 rounded-b-full border-2" />
       </span>
     );
   }
@@ -868,7 +882,7 @@
 
           <img src="images/ganesha.png" alt="Lord Ganesha"
                className="mx-auto h-32 w-32 sm:h-44 sm:w-44 animate-float-soft"
-               style={{ filter: "drop-shadow(0 12px 22px rgba(122,59,40,0.25))" }} />
+               style={{ filter: "url(#ganesha-bolden) drop-shadow(0 12px 22px rgba(122,59,40,0.25))" }} />
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm sm:text-base">
             <span className="font-display text-primary">Shri Ramalinga Chowdeshwari Krupe</span>
