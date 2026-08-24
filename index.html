@@ -210,7 +210,7 @@
   /* ---------- lib/wedding constants ---------- */
   const WEDDING_DATE = new Date("2026-11-29T08:05:00+05:30");
   const WEDDING_DATE_LABEL = "29 · November · 2026";
-  const MUSIC_SRC = ""; // Add an audio URL to enable playback.
+  const MUSIC_SRC = "music/wedding-music.mp3";
 
   /* ---------- hooks/use-mobile ---------- */
   const MOBILE_BREAKPOINT = 768;
@@ -415,6 +415,34 @@
     const [playing, setPlaying] = useState(false);
     const [note, setNote] = useState(null);
 
+    useEffect(() => {
+      const el = audioRef.current;
+      if (!MUSIC_SRC || !el) return;
+      el.muted = true;
+      el.volume = 1;
+      const tryPlay = async () => {
+        try { await el.play(); setPlaying(true); } catch {}
+      };
+      tryPlay();
+
+      const unmute = () => {
+        el.muted = false;
+        if (el.paused) tryPlay();
+        cleanup();
+      };
+      const cleanup = () => {
+        window.removeEventListener("pointerdown", unmute);
+        window.removeEventListener("keydown", unmute);
+        window.removeEventListener("touchstart", unmute);
+        window.removeEventListener("scroll", unmute);
+      };
+      window.addEventListener("pointerdown", unmute);
+      window.addEventListener("keydown", unmute);
+      window.addEventListener("touchstart", unmute);
+      window.addEventListener("scroll", unmute, { passive: true });
+      return cleanup;
+    }, []);
+
     const toggle = async () => {
       const el = audioRef.current;
       if (!MUSIC_SRC || !el) {
@@ -422,6 +450,7 @@
         setTimeout(() => setNote(null), 2200);
         return;
       }
+      el.muted = false;
       if (playing) { el.pause(); setPlaying(false); return; }
       try { await el.play(); setPlaying(true); }
       catch { setNote("Tap again to play"); setTimeout(() => setNote(null), 2200); }
@@ -441,7 +470,7 @@
         >
           {playing ? "♪♪" : "♫"}
         </button>
-        {MUSIC_SRC ? <audio ref={audioRef} src={MUSIC_SRC} loop preload="none" /> : null}
+        {MUSIC_SRC ? <audio ref={audioRef} src={MUSIC_SRC} loop autoPlay playsInline preload="auto" /> : null}
       </div>
     );
   }
